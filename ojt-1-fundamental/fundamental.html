@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue fundamental</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Total task ({{ remainTaskTotal }})</h1>
+        <form @submit.prevent="addTask">
+            <input type="text" v-model="newTask">
+            <button type="submit" :disabled="newTask == null">Add task</button>
+        </form>
+        <ul>
+            <li v-for="(toDoTask, index) in toDoList">
+                <input type="checkbox" v-model="toDoTask.completed">
+                <!-- <span :class="toDoTask.completed ? 'done' : ''"> -->
+                <span :class="{ 'done' : toDoTask.completed}">
+                    {{ toDoTask.name }}
+                </span>
+                <button @click="deleteTask(index)" v-if="toDoTask.completed">
+                    Delete
+                </button>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+<!-- link to vue cdn(Content Delivery Network) -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<!-- link to external js file -->
+<script src="fundamental.js"></script>
+
+<!-- link to external css file -->
+<link rel="stylesheet" href="fundamental.css">

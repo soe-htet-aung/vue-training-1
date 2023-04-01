@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Props</title>
+</head>
+
+<body>
+    <div id="app">
+        <employee-list v-for="(employee, index) in employeeList" v-bind:key="index"
+            v-bind:name="employee.name"
+            v-bind:address="employee.address">
+        </employee-list>
+    </div>
+</body>
+
+</html>
+
+<!-- link to vue cdn(Content Delivery Network) -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<!-- link to external js file -->
+<script src="props.js"></script>

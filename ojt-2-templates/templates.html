@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Templates</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- inline-template-block -->
+        <inline-template-component inline-template style="background-color: lightblue;">
+            <div>
+                <h1>Vote result using inline template: {{ count }} </h1>
+                <button @click="increaseVote">Vote</button>
+            </div>
+        </inline-template-component>
+
+        <!-- x-template-block -->
+        <x-template-component style="background-color: gray;"></x-template-component>
+
+        <!-- slot-template-block -->
+        <div style="background-color: blueviolet;">
+            <slot-template-component>
+                <template #title>
+                    This is slot template title one
+                </template>
+                <template #content>
+                    This is slot template content one
+                </template>
+            </slot-template-component>
+            <slot-template-component>
+                <template #title>
+                    This is slot template title two
+                </template>
+                <template #content>
+                    This is slot template content two
+                </template>
+            </slot-template-component>
+            <slot-template-component>
+                <template #title>
+                </template>
+                <template #content>
+                </template>
+            </slot-template-component>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- link to vue cdn(Content Delivery Network) -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<!-- x-template-block -->
+<script type="text/x-template" id="x-template">
+    <div>
+        <h1>Vote result using x-template: {{ count }} </h1>
+        <button @click="increaseVote">Vote</button>
+    </div>
+</script>
+
+<!-- link to external js file -->
+<script src="templates.js"></script>
