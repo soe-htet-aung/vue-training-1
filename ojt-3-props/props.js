@@ -4,8 +4,8 @@ Vue.component('employee-list',
         template:
             `
             <div>
-                <h1>{{ name }}</h1>
-                <p>{{ address }}</p>
+                <h2>Employee name: {{ name }}</h2>
+                <p>Address: {{ address }}</p>
                 <hr>
             </div>
         `,
@@ -28,9 +28,9 @@ new Vue(
         el: '#app',
         data: {
             employeeList: [
-                { name: 'Mg Mg', address: 'Meiktila' },
+                { name: 'Mg Mg', address: 'Mandalay' },
                 { name: 'Kyaw Kyaw', address: 'Yangon' },
-                { name: 'Ma Ma', address: 'Yangon' },
+                { name: 'Ma Ma', address: 'Pyin Oo Lwin' },
                 { name: 'Zaw Zaw', address: 'Yangon' }
             ]
         }
